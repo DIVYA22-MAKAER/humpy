@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Hampi | Ancient Beauty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f8bbd0;
+            --secondary: #fce4ec;
+            --accent: #ff80ab;
+            --text: #5d4037;
+            --light: #fff8fa;
+            --dark: #4a4a4a;
+            --shadow: rgba(248, 187, 208, 0.3);
+        }
+
+        .dark-mode {
+    --primary: #f1bbd6;  /* Soft Muted Pastel Pink */
+    --secondary: #a98b9d; /* Dusty Rose */
+    --accent: #f4accb;    /* Light Baby Pink for Highlights */
+    --text: #c2498a;      /* Soft Off-White Pinkish for Readability */
+    --light: #2a2a2a;     /* Deep Charcoal (but not too black) */
+    --dark: #9d1a5c;      /* Rich Dark Gray */
+    --shadow: rgba(244, 172, 203, 0.3); /* Gentle Pink Glow */
+}
+
+
+
+
+        
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            transition: all 0.5s ease;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+
+        .cursive-text {
+            font-family: 'Sacramento', cursive;
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        .navbar {
+            background-color: var(--primary) !important;
+            box-shadow: 0 4px 15px var(--shadow);
+            transition: all 0.5s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark) !important;
+        }
+
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover:before {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+        }
+
+        .hero {
+            height: 100vh;
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(248, 187, 208, 0.4), rgba(252, 228, 236, 0.6));
+        }
+
+        .hero-content {
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--secondary);
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 15%;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 10px 20px var(--shadow);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            background-color: var(--light);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            color: var(--accent);
+        }
+
+        .btn-custom {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .btn-custom:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .btn-outline-custom {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        /* Feature icons */
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: var(--light);
+            border: 4px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--primary);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--primary);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--primary);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--primary) transparent transparent;
+        }
+
+        .right::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--light);
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow);
+        }
+
+        /* Gallery */
+        .gallery-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow);
+            position: relative;
+        }
+
+        .gallery-item img {
+            transition: all 0.5s ease;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,128,171,0) 0%, rgba(255,128,171,0.8) 100%);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            color: white;
+            text-align: center;
+            padding: 0 15px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 50px 0 20px;
+        }
+
+        .social-icons {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .social-icons:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Toggle Button */
+        .mode-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px var(--shadow);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .mode-toggle:hover {
+            transform: rotate(45deg);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px var(--shadow);
+            z-index: 999;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Contact Form */
+        .contact-form .form-control {
+            border-radius: 30px;
+            border: 2px solid var(--primary);
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .form-control:focus {
+            box-shadow: none;
+            border-color: var(--accent);
+        }
+
+        .contact-form textarea.form-control {
+            border-radius: 20px;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid var(--primary);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--primary) transparent transparent;
+            }
+            .left::after, .right::after {
+                left: 18px;
+            }
+            .right {
+                left: 0%;
+            }
+            .navbar {
+                padding: 10px;
+            }
+            .cursive-text {
+                font-size: 2rem;
+            }
+            .hero-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-lotus"></i> Hampi Dreams
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#places">Places</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#activities">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#architecture">Architecture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#history">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#travel">Travel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1 class="mb-3">Welcome to Hampi</h1>
+            <p class="cursive-text">Where stones tell stories</p>
+            <p class="lead my-4">Explore the enchanting ruins of a once-mighty empire, now a UNESCO World Heritage Site</p>
+            <div class="mt-4">
+                <a href="#about" class="btn btn-custom me-3">Discover More</a>
+                <a href="#gallery" class="btn btn-outline-custom">View Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">About Hampi</h2>
+                <p class="cursive-text">The forgotten empire</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-3">A Historical Gem</h3>
+                            <p class="card-text">Hampi was once the capital of the powerful Vijayanagara Empire. Located in Karnataka, India, this ancient city is now a captivating complex of ruins spread across a stunning landscape of giant boulders, lush greenery, and the Tungabhadra River.</p>
+                            <p class="card-text">The city reached its peak during the 16th century when it was one of the largest and richest cities in the world. Today, its ruins offer a glimpse into the splendor of its past.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-3">UNESCO Recognition</h3>
+                            <p class="card-text">Recognized as a UNESCO World Heritage Site in 1986, Hampi is celebrated for its remarkable architecture, religious monuments, civil structures, ancient market streets, and royal complexes.</p>
+                            <p class="card-text">The site combines historical significance with natural beauty, creating a magical atmosphere that transports visitors back in time. Hampi's monuments represent a unique artistic style that blends elements from various traditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 fade-in">
+                <p class="lead">Hampi's monuments bear testimony to the wealth, prosperity, and artistic excellence of the Vijayanagara Empire, making it one of India's most fascinating historical destinations.</p>
+                <a href="#places" class="btn btn-custom mt-3">Explore Places to Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places to Visit Section -->
+    <section id="places" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Places to Visit</h2>
+                <p class="cursive-text">Marvel at ancient wonders</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 fade-in">
+                    <div class="card h-100">
+                        <img src="images/Virupaksha Temple.jpeg" class="card-img-top" alt="Virupaksha Temple">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Virupaksha Temple</h4>
+                            <p class="card-text">A magnificent temple dedicated to Lord Shiva, still active and serving as the main center of pilgrimage in Hampi.</p>
+                            <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#virupakshaModal">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 fade-in">
+                    <div class="card h-100">
+                        <img src="images/Vijaya Vittala Temple.jpeg" class="card-img-top" alt="Vijaya Vittala Temple">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Vijaya Vittala Temple</h4>
+                            <p class="card-text">Famous for its stunning stone chariot and musical pillars, it represents the pinnacle of Vijayanagara art.</p>
+                            <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#vittalaModal">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 fade-in">
+                    <div class="card h-100">
+                        <img src="images/Ancient Lotus Mahal in Hampi Karnataka, India… (1).jpeg" class="card-img-top" alt="Lotus Mahal">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Lotus Mahal</h4>
+                            <p class="card-text">A graceful structure blending Hindu and Islamic architectural styles, used as a royal relaxation area.</p>
+                            <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#lotusModal">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 fade-in">
+                    <div class="card h-100">
+                        <img src="images/Matanga Hills _ Karnataka.jpeg" class="card-img-top" alt="Matanga Hill">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Matanga Hill</h4>
+                            <p class="card-text">Offering panoramic views of Hampi, this is the perfect spot to witness magical sunrises and sunsets.</p>
+                            <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#matangaModal">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Things to Do Section -->
+    <section id="activities" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Things to Do</h2>
+                <p class="cursive-text">Create unforgettable memories</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 fade-in">
+                    <div class="card feature-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-hiking feature-icon"></i>
+                            <h4 class="card-title">Explore Ruins</h4>
+                            <p class="card-text">Wander through the vast complex of temples, palaces, and market streets to immerse yourself in ancient history.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="card feature-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-mountain feature-icon"></i>
+                            <h4 class="card-title">Rock Climbing</h4>
+                            <p class="card-text">Challenge yourself with bouldering amidst Hampi's unique geological formations and stunning landscapes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="card feature-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-water feature-icon"></i>
+                            <h4 class="card-title">Coracle Rides</h4>
+                            <p class="card-text">Take a traditional circular boat ride on the Tungabhadra River for a unique perspective of the ruins.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in">
+                    <div class="card feature-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-sun feature-icon"></i>
+                            <h4 class="card-title">Sunset Viewing</h4>
+                            <p class="card-text">Experience magical sunsets from Hemakuta Hill or Matanga Hill, painting the ruins in golden hues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 fade-in">
+                <a href="#architecture" class="btn btn-custom">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Architecture</h2>
+                <p class="cursive-text">Masterpieces in stone</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 fade-in">
+                    <div id="architectureCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#architectureCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#architectureCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#architectureCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner rounded-4 shadow">
+                            <div class="carousel-item active">
+                                <img src="images/Day 14 _ Postcards from Virupaksha Temple, Hampi….jpeg" class="d-block w-100" alt="Dravidian Architecture">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Dravidian Style</h5>
+                                    <p>Ornate pillars and intricate designs</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/Stone frieze, depicting Hindu gods, carved into….jpeg" class="d-block w-100" alt="Stone Carvings">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Stone Carvings</h5>
+                                    <p>Detailed sculptures telling mythological stories</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/d1d354e8-c6bc-4b9b-ac2c-9565a6025cff.jpeg" class="d-block w-100" alt="Monolithic Structures">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Monolithic Structures</h5>
+                                    <p>Massive sculptures carved from single stones</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#architectureCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#architectureCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <h3>Distinctive Architectural Features</h3>
+                    <p class="lead">Hampi's architecture is characterized by its unique blend of styles and incredible craftsmanship.</p>
+                    <div class="accordion" id="architectureAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Dravidian-Style Temples
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#architectureAccordion">
+                                <div class="accordion-body">
+                                    The temples of Hampi follow the classic Dravidian style, characterized by stepped pyramidal towers, elaborate pillared halls, and intricate carvings. The structures feature ornate pillars, each uniquely carved with images of gods, goddesses, and mythological scenes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Stone Carvings
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#architectureAccordion">
+                                <div class="accordion-body">
+                                    The stone carvings of Hampi are renowned for their detail and expressiveness. From delicate floral motifs to dynamic scenes from Hindu epics, these carvings showcase the exceptional skill of the artisans who worked here centuries ago.
+                                </div>
+                            </div>
+                        </div>
+                        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Monolithic Structures
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#architectureAccordion">
+                                    <div class="accordion-body">
+                                        Hampi is famous for its monolithic sculptures, such as the colossal Narasimha statue and the massive Lakshmi Narasimha statue. These impressive structures were carved from single giant boulders, showcasing extraordinary engineering skills.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- History Section -->
+        <section id="history" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">History Timeline</h2>
+                    <p class="cursive-text">The story of an empire</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-container left fade-in">
+                        <div class="timeline-content">
+                            <h3>1336 CE</h3>
+                            <h4>Foundation of Empire</h4>
+                            <p>The Vijayanagara Empire was founded by Harihara I and Bukka Raya I, who established Hampi as their capital.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right fade-in">
+                        <div class="timeline-content">
+                            <h3>1446-1465 CE</h3>
+                            <h4>Expansion Under Deva Raya II</h4>
+                            <p>The empire reached its peak under Deva Raya II, expanding its territory and influence throughout South India.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left fade-in">
+                        <div class="timeline-content">
+                            <h3>1509-1529 CE</h3>
+                            <h4>Golden Age</h4>
+                            <p>Under Krishna Deva Raya, Vijayanagara experienced its golden age with flourishing art, architecture, and commerce.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right fade-in">
+                        <div class="timeline-content">
+                            <h3>1565 CE</h3>
+                            <h4>Battle of Talikota</h4>
+                            <p>The empire faced defeat at the Battle of Talikota, leading to the sacking of Hampi by allied sultanates.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left fade-in">
+                        <div class="timeline-content">
+                            <h3>1800s</h3>
+                            <h4>Rediscovery</h4>
+                            <p>British officials and archaeologists began documenting the ruins of Hampi, bringing them to wider attention.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right fade-in">
+                        <div class="timeline-content">
+                            <h3>1986</h3>
+                            <h4>UNESCO Recognition</h4>
+                            <p>Hampi was declared a UNESCO World Heritage Site, recognizing its cultural and historical significance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Travel Section -->
+        <section id="travel" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">How to Reach</h2>
+                    <p class="cursive-text">Planning your journey</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 fade-in">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-plane me-2"></i> By Air</h3>
+                                <p>The nearest airports to Hampi are:</p>
+                                <ul>
+                                    <li><strong>Ballari Airport (Bellary)</strong> - About 60 km from Hampi</li>
+                                    <li><strong>Hubli Airport</strong> - About 160 km from Hampi</li>
+                                    <li><strong>Bangalore International Airport</strong> - About 350 km from Hampi</li>
+                                </ul>
+                                <p>From these airports, you can hire a taxi or take a bus to reach Hampi.</p>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-train me-2"></i> By Train</h3>
+                                <p>The nearest railway stations are:</p>
+                                <ul>
+                                    <li><strong>Hospet Junction</strong> - About 13 km from Hampi, with good connections to major cities</li>
+                                    <li><strong>Bellary</strong> - About 60 km from Hampi</li>
+                                </ul>
+                                <p>From Hospet, you can take an auto-rickshaw, taxi, or local bus to Hampi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fade-in">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-bus me-2"></i> By Road</h3>
+                                <p>Hampi is well-connected by road to major cities in Karnataka and neighboring states:</p>
+                                <ul>
+                                    <li><strong>From Bangalore</strong> - 350 km (approx. 8 hours)</li>
+                                    <li><strong>From Hyderabad</strong> - 380 km (approx. 8-9 hours)</li>
+                                    <li><strong>From Goa</strong> - 330 km (approx. 7-8 hours)</li>
+                                </ul>
+                                <p>Regular buses operate from these cities to Hospet, from where you can reach Hampi.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="fas fa-map-marker-alt me-2"></i> Local Transportation</h3>
+                                <p>Within Hampi, you can get around by:</p>
+                                <ul>
+                                    <li><strong>Auto-rickshaws</strong> - Available for short distances</li>
+                                    <li><strong>Bicycles</strong> - Can be rented for exploring at your own pace</li>
+                                    <li><strong>Walking</strong> - Many attractions are within walking distance</li>
+                                    <li><strong>Coracle boats</strong> - To cross the Tungabhadra River</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 fade-in">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title text-center mb-4"><i class="fas fa-map me-2"></i> Location Map</h3>
+                                <!-- Placeholder for Google Maps -->
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61925.73164688721!2d76.4387256777218!3d15.334565396896955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb7d963540f6179%3A0xfdef5094199f54c5!2sHampi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1643365637925!5m2!1sen!2sin" allowfullscreen="" loading="lazy" class="border-0 rounded-4 shadow"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Gallery</h2>
+                    <p class="cursive-text">Capturing the magic</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 fade-in">
+                        <div class="gallery-item">
+                            <img src="images/Virupaksha Temple.jpeg" alt="Virupaksha Temple">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Virupaksha Temple at Sunset</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 fade-in">
+                        <div class="gallery-item">
+                            <img src="images/Famous Stone Chariot of Hampi.jpeg" alt="Stone Chariot">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">The Iconic Stone Chariot</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 fade-in">
+                        <div class="gallery-item">
+                            <img src="images/Lonely Planet India on Instagram_ “The….jpeg" alt="Tungabhadra River">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Tungabhadra River Views</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 fade-in">
+                        <div class="gallery-item">
+                            <img src="images/Ancient Lotus Mahal in Hampi Karnataka, India….jpeg" alt="Lotus Mahal">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Elegant Lotus Mahal</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 fade-in">
+                        <div class="gallery-item">
+                            <img src="images/Ancient Ruins of Elephant Stables Stock Photo - Image of civilization, horizontal_ 26824772.jpeg" alt="Elephant Stables">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Royal Elephant Stables</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 fade-in">
+                        <div class="gallery-item">
+                            <img src="images/Temple Hampi.jpeg" alt="Boulder Landscape">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Unique Boulder Landscape</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="cursive-text">Let's plan your Hampi adventure</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 fade-in">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-4">Get in Touch</h3>
+                                <form class="contact-form">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Subject">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-custom w-100">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fade-in">
+                        <div class="card h-100">
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-4">Contact Information</h3>
+                                <p class="mb-3"><i class="fas fa-map-marker-alt me-3 text-accent"></i> Hampi Tourism Office, Hospet, Karnataka, India</p>
+                                <p class="mb-3"><i class="fas fa-phone me-3 text-accent"></i> +91 12345 67890</p>
+                                <p class="mb-3"><i class="fas fa-envelope me-3 text-accent"></i> info@hampidreams.com</p>
+                                <p class="mb-3"><i class="fas fa-clock me-3 text-accent"></i> Open daily: 9 AM - 6 PM</p>
+                                
+                                <h4 class="mt-5 mb-3">Follow Us</h4>
+                                <div class="social-links">
+                                    <a href="#" class="social-icons"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-icons"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icons"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-icons"><i class="fab fa-pinterest"></i></a>
+                                </div>
+                                
+                                <div class="mt-5">
+                                    <h4 class="mb-3">Best Time to Visit</h4>
+                                    <p>October to February offers the most pleasant weather for exploring Hampi's treasures.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <h3 class="mb-4">Hampi Dreams</h3>
+                        <p>Exploring the enchanting ruins of Hampi, where every stone tells a story of a glorious past. A journey through time awaits you in this UNESCO World Heritage Site.</p>
+                        <div class="mt-3">
+                            <a href="#" class="social-icons"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icons"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icons"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icons"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-4">
+                        <h4 class="mb-4">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#home" class="text-decoration-none text-dark">Home</a></li>
+                            <li class="mb-2"><a href="#about" class="text-decoration-none text-dark">About</a></li>
+                            <li class="mb-2"><a href="#places" class="text-decoration-none text-dark">Places</a></li>
+                            <li class="mb-2"><a href="#activities" class="text-decoration-none text-dark">Activities</a></li>
+                            <li class="mb-2"><a href="#gallery" class="text-decoration-none text-dark">Gallery</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-4 mb-4">
+                        <h4 class="mb-4">Newsletter</h4>
+                        <p>Subscribe to our newsletter for the latest updates and travel tips.</p>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-outline-custom" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Hampi Dreams. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Designed with <i class="fas fa-heart text-accent"></i> by Divya Jawalkar</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- Mode Toggle Button -->
+        <div class="mode-toggle" id="modeToggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    
+        <!-- Back to Top Button -->
+        <div class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    
+        <!-- Modals for Places -->
+        <!-- Virupaksha Temple Modal -->
+        <div class="modal fade" id="virupakshaModal" tabindex="-1" aria-labelledby="virupakshaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="virupakshaModalLabel">Virupaksha Temple</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/Virupaksha Temple.jpeg" class="img-fluid rounded mb-3" alt="Virupaksha Temple">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Ancient Living Temple</h4>
+                                <p>The Virupaksha Temple is dedicated to Lord Shiva, known here as Virupaksha, the consort of the local goddess Pampa. It is one of the oldest functioning temples in India, with a history dating back to the 7th century.</p>
+                                <p>The temple complex features:</p>
+                                <ul>
+                                    <li>A stunning 50-meter high main gopuram (tower)</li>
+                                    <li>Intricate stone carvings depicting mythology</li>
+                                    <li>A sanctum with daily rituals and ceremonies</li>
+                                    <li>A unique pinhole camera effect in one of its chambers</li>
+                                </ul>
+                                <p>The temple remains the most important spiritual center in Hampi and continues to attract pilgrims and tourists alike.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Vittala Temple Modal -->
+        <div class="modal fade" id="vittalaModal" tabindex="-1" aria-labelledby="vittalaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="vittalaModalLabel">Vijaya Vittala Temple</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/Vijaya Vittala Temple.jpeg" class="img-fluid rounded mb-3" alt="Vittala Temple">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Architectural Marvel</h4>
+                                <p>The Vittala Temple is dedicated to Lord Vittala, an incarnation of Lord Vishnu. Built in the 15th century, it represents the pinnacle of Vijayanagara temple architecture.</p>
+                                <p>Key features include:</p>
+                                <ul>
+                                    <li>The famous Stone Chariot, an iconic symbol of Hampi</li>
+                                    <li>Musical pillars that produce different musical notes when tapped</li>
+                                    <li>Intricately carved halls with mythological sculptures</li>
+                                    <li>Beautiful mandapas (pavilions) with detailed reliefs</li>
+                                </ul>
+                                <p>The temple demonstrates the extraordinary artistic vision and technical skill of the craftsmen of the Vijayanagara Empire.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Lotus Mahal Modal -->
+        <div class="modal fade" id="lotusModal" tabindex="-1" aria-labelledby="lotusModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="lotusModalLabel">Lotus Mahal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/Ancient Lotus Mahal in Hampi Karnataka, India… (1).jpeg" class="img-fluid rounded mb-3" alt="Lotus Mahal">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Elegant Palace Structure</h4>
+                                <p>The Lotus Mahal is a unique structure that beautifully blends Hindu and Islamic architectural styles. Located in the Zenana Enclosure, it was part of the royal quarters for women.</p>
+                                <p>Distinctive features include:</p>
+                                <ul>
+                                    <li>Lotus-like structure with arched windows and domed roof</li>
+                                    <li>An advanced cooling system with pipes for water circulation</li>
+                                    <li>Symmetrical design with delicate carvings</li>
+                                    <li>One of the few structures in Hampi that wasn't severely damaged</li>
+                                </ul>
+                                <p>This elegant building was likely used as a relaxation area for royal ladies and showcases the cultural synthesis that characterized the Vijayanagara Empire.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Matanga Hill Modal -->
+        <div class="modal fade" id="matangaModal" tabindex="-1" aria-labelledby="matangaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="matangaModalLabel">Matanga Hill</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/Matanga Hills _ Karnataka.jpeg" class="img-fluid rounded mb-3" alt="Matanga Hill">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Panoramic Viewpoint</h4>
+                                <p>Matanga Hill is the highest point in Hampi, offering breathtaking panoramic views of the entire landscape, including temples, ruins, and the Tungabhadra River.</p>
+                                <p>What makes it special:</p>
+                                <ul>
+                                    <li>The perfect spot for sunrise and sunset photography</li>
+                                    <li>A relatively short climb with stone steps leading to the top</li>
+                                    <li>360-degree views of Hampi's archaeological complex</li>
+                                    <li>Home to the ancient Veerabhadra Temple</li>
+                                </ul>
+                                <p>According to legend, this hill is where the sage Matanga lived and where Sugriva, from the Ramayana epic, took shelter when fleeing from his brother Vali.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bootstrap & jQuery Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Custom Scripts -->
+        <script>
+            $(document).ready(function() {
+                // Smooth scrolling for navigation links
+                $('a.nav-link').on('click', function(event) {
+                    if (this.hash !== '') {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top - 70
+                        }, 800);
+                    }
+                });
+                
+                // Fade-in animation on scroll
+                function checkFade() {
+                    $('.fade-in').each(function() {
+                        var bottomOfElement = $(this).offset().top + $(this).outerHeight() / 3;
+                        var bottomOfWindow = $(window).scrollTop() + $(window).height();
+                        
+                        if (bottomOfWindow > bottomOfElement) {
+                            $(this).addClass('visible');
+                        }
+                    });
+                }
+                
+                // Check elements on load
+                checkFade();
+                
+                // Check elements on scroll
+                $(window).scroll(function() {
+                    checkFade();
+                    
+                    // Show back to top button when scrolled down
+                    if ($(this).scrollTop() > 300) {
+                        $('#backToTop').addClass('show');
+                    } else {
+                        $('#backToTop').removeClass('show');
+                    }
+                });
+                
+                // Back to top button click
+                $('#backToTop').click(function() {
+                    $('html, body').animate({scrollTop: 0}, 800);
+                    return false;
+                });
+                
+                // Mode toggle
+                $('#modeToggle').click(function() {
+                    $('body').toggleClass('dark-mode');
+                    
+                    if ($('body').hasClass('dark-mode')) {
+                        $(this).html('<i class="fas fa-sun"></i>');
+                    } else {
+                        $(this).html('<i class="fas fa-moon"></i>');
+                    }
+                });
+                
+                // Form submission (prevent actual submission)
+                $('.contact-form').submit(function(e) {
+                    e.preventDefault();
+                    
+                    // Simple validation
+                    var valid = true;
+                    $('.form-control[required]').each(function() {
+                        if ($(this).val() === '') {
+                            valid = false;
+                            $(this).addClass('is-invalid');
+                        } else {
+                            $(this).removeClass('is-invalid');
+                        }
+                    });
+                    
+                    if (valid) {
+                        // Show a success message (in a real site, this would submit the form)
+                        alert('Thank you for your message! We will get back to you soon.');
+                        $(this)[0].reset();
+                    }
+                });
+                
+                // Navbar color change on scroll
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 50) {
+                        $('.navbar').css('background-color', 'var(--primary)');
+                    } else {
+                        $('.navbar').css('background-color', 'transparent');
+                    }
+                });
+            });
+        </script>
+    </body>
+    </html>
