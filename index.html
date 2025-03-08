@@ -91,19 +91,28 @@
         .nav-link:hover {
             color: var(--accent) !important;
         }
+/*new */
+    .hero {
+    background: url('your-image.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
 
-        .hero {
-            height: 100vh;
-            background-image: url('/api/placeholder/1920/1080');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+}
 
+/*old*/
         .hero:after {
             content: '';
             position: absolute;
@@ -113,7 +122,66 @@
             height: 100%;
             background: linear-gradient(rgba(248, 187, 208, 0.4), rgba(252, 228, 236, 0.6));
         }
+/*new*/
+        h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    z-index: 2;
+}
 
+.cursive-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #ffcc00;
+}
+.hero-content h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-custom {
+    background: #ffcc00;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background: #ffa500;
+    transform: scale(1.05);
+}
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* till here*/
         .hero-content {
             z-index: 10;
             text-align: center;
@@ -534,17 +602,26 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="hero">
-        <div class="hero-content animate__animated animate__fadeIn">
-            <h1 class="mb-3">Welcome to Hampi</h1>
-            <p class="cursive-text">Where stones tell stories</p>
-            <p class="lead my-4">Explore the enchanting ruins of a once-mighty empire, now a UNESCO World Heritage Site</p>
-            <div class="mt-4">
-                <a href="#about" class="btn btn-custom me-3">Discover More</a>
-                <a href="#gallery" class="btn btn-outline-custom">View Gallery</a>
-            </div>
+
+<section id="home" class="hero">
+    <div class="hero-content animate__animated animate__fadeIn">
+        <h1>Welcome to Hampi</h1>
+        <p class="cursive-text">Where stones tell stories</p>
+        <p class="lead my-4">Explore the enchanting ruins of a once-mighty empire, now a UNESCO World Heritage Site</p>
+        <div class="mt-4">
+            <a href="#about" class="btn btn-custom me-3">Discover More</a>
+            <a href="#gallery" class="btn btn-outline-custom">View Gallery</a>
         </div>
-    </section>
+    </div>
+    <div class="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="scroll-down">
+    <i class="fas fa-chevron-down"></i>
+</div>
+
+</section>
+
 
     <!-- About Section -->
     <section id="about" class="section">
