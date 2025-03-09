@@ -29,11 +29,6 @@
     --shadow: rgba(244, 172, 203, 0.3); /* Gentle Pink Glow */
 }
 
-
-
-
-        
-
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text);
@@ -52,16 +47,18 @@
             font-size: 2.5rem;
             color: var(--accent);
         }
-
-        .navbar {
+/*nav */ 
+.navbar {
             background-color: var(--primary) !important;
             box-shadow: 0 4px 15px var(--shadow);
             transition: all 0.5s ease;
+            padding: 15px 0;
         }
 
         .navbar-brand {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
+            font-size: 1.6rem;
             color: var(--dark) !important;
         }
 
@@ -71,6 +68,7 @@
             margin: 0 10px;
             position: relative;
             transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .nav-link:before {
@@ -91,9 +89,42 @@
         .nav-link:hover {
             color: var(--accent) !important;
         }
-/*new */
-    .hero {
-    background: url('your-image.jpg') center/cover no-repeat;
+       /* Dropdown menu styles */
+.dropdown-menu {
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow);
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.dropdown-item {
+    color: var(--dark);
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateX(5px);
+}
+
+.dropdown-toggle::after {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* Ensure dropdown works on hover as well */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/*new hero*/
+/* HERO SECTION */
+.hero {
+    background: url('images/Day 14 _ Postcards from Virupaksha Temple, Hampi….jpeg') center/cover no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -102,6 +133,7 @@
     position: relative;
 }
 
+/* DARK OVERLAY */
 .hero::before {
     content: "";
     position: absolute;
@@ -109,78 +141,45 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+ 
 }
 
-/*old*/
-        .hero:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(248, 187, 208, 0.4), rgba(252, 228, 236, 0.6));
-        }
-/*new*/
-        h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: #fff;
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
     z-index: 2;
+    color: rgb(219, 0, 142);
+    max-width: 80%;
 }
 
-.cursive-text {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.8rem;
-    color: #ffcc00;
-}
-.hero-content h1 {
-    animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* BUTTONS */
 .btn-custom {
-    background: #ffcc00;
-    color: #000;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    background: rgb(219, 0, 142);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-custom:hover {
-    background: #ffa500;
-    transform: scale(1.05);
-}
-.scroll-down {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    color: white;
-    animation: bounce 1.5s infinite;
+    background: rgb(176, 0, 114);
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+.btn-outline-custom {
+    background: transparent;
+    border: 2px solid rgb(219, 0, 142);
+    color: rgb(219, 0, 142);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
+
+.btn-outline-custom:hover {
+    background: rgb(219, 0, 142);
+    color: white;
+}
+
 /* till here*/
         .hero-content {
             z-index: 10;
@@ -558,69 +557,58 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                <i class="fas fa-lotus"></i> Hampi Dreams
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#places">Places</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#activities">Activities</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#architecture">Architecture</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#history">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#travel">Travel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <i class="fas fa-lotus"></i> Hampi Dreams
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#places">Places</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Gallery
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="galleryDropdown">
+                        <li><a class="dropdown-item" href="#gallery">Photo Gallery</a></li>
+                        <li><a class="dropdown-item" href="#architecture">Architecture</a></li>
+                        <li><a class="dropdown-item" href="#travel">Travel</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Home Section -->
+    <!-- home pagees) -->
+    <section id="home" class="hero" style="background: url('images/Day\ 14\ _\ Postcards\ from\ Virupaksha\ Temple\,\ Hampi….jpeg') center/cover no-repeat; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div> <!-- Dark overlay for better text visibility -->
+        
+        <div class="hero-content animate__animated animate__fadeIn" style="position: relative; z-index: 2; color: rgb(219, 0, 142);">
+            <h1 class="animate__animated animate__fadeInDown">Welcome to Hampi</h1>
+            <p class="cursive-text animate__animated animate__fadeIn animate__delay-1s">Where stones tell stories</p>
+            <p class="lead my-4 animate__animated animate__fadeIn animate__delay-2s">Explore the enchanting ruins of a once-mighty empire, now a UNESCO World Heritage Site</p>
+            <div class="mt-4 animate__animated animate__fadeIn animate__delay-3s">
+                <a href="#about" class="btn btn-custom me-3 pulse-btn">Discover More</a>
+                <a href="#gallery" class="btn btn-outline-custom">View Gallery</a>
             </div>
         </div>
-    </nav>
-
-    <!-- Home Section -->
-
-<section id="home" class="hero">
-    <div class="hero-content animate__animated animate__fadeIn">
-        <h1>Welcome to Hampi</h1>
-        <p class="cursive-text">Where stones tell stories</p>
-        <p class="lead my-4">Explore the enchanting ruins of a once-mighty empire, now a UNESCO World Heritage Site</p>
-        <div class="mt-4">
-            <a href="#about" class="btn btn-custom me-3">Discover More</a>
-            <a href="#gallery" class="btn btn-outline-custom">View Gallery</a>
-        </div>
-    </div>
-    <div class="scroll-down">
-        <i class="fas fa-chevron-down"></i>
-    </div>
-    <div class="scroll-down">
-    <i class="fas fa-chevron-down"></i>
-</div>
-
-</section>
+    </section>
 
 
     <!-- About Section -->
@@ -1065,21 +1053,22 @@
                         <div class="card h-100">
                             <div class="card-body p-4">
                                 <h3 class="card-title mb-4">Get in Touch</h3>
-                                <form class="contact-form">
+                                <form action="https://formsubmit.co/divyajawalkarpc@gmail.com" method="POST">
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" placeholder="Subject">
+                                        <input type="text" name="subject" class="form-control" placeholder="Subject">
                                     </div>
                                     <div class="mb-3">
-                                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                        <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-custom w-100">Send Message</button>
                                 </form>
+                                
                             </div>
                         </div>
                     </div>
@@ -1139,11 +1128,13 @@
                     <div class="col-lg-3 col-md-4 mb-4">
                         <h4 class="mb-4">Newsletter</h4>
                         <p>Subscribe to our newsletter for the latest updates and travel tips.</p>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
-                            <button class="btn btn-outline-custom" type="button">Subscribe</button>
-                        </div>
-                    </div>
+                        <form action="https://formsubmit.co/divyajawalkarpc@gmail.com" method="POST">
+                            <div class="input-group mb-3">
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                                <button class="btn btn-outline-custom" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                        
                 </div>
                 <hr>
                 <div class="row">
@@ -1400,3 +1391,4 @@
         </script>
     </body>
     </html>
+\end{code}
