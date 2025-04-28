@@ -1297,7 +1297,7 @@
             </div>
         </div>
 
-    <!-- lol -->
+    <!-- #1f -->
     <div style="margin:0; padding:0; width:100vw; overflow-x:hidden;">
   <footer style="background-color:#0f1735; color:#fff; padding:40px 20px 60px; font-family:'Segoe UI', sans-serif; font-size:15px;">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width:1200px; margin: 0 auto; gap: 40px;">
@@ -1347,7 +1347,7 @@
             frameborder="0" 
             marginheight="0" 
             marginwidth="0">
-            Loading form...
+         
           </iframe>
         </div>
       </div>
@@ -1371,7 +1371,8 @@
   <footer style="background-color:#0f1735; color:#fff; padding:40px 20px 60px; font-family:'Segoe UI', sans-serif; font-size:15px;">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width:1200px; margin: 0 auto; gap: 40px;">
       
-      <!-- About GlocalBodh -->
+      <!--  f2 
+About GlocalBodh -->
       <div style="flex:1; min-width:250px;">
         <h4 style="font-weight:600; margin-bottom:15px;">About GlocalBodh Academy</h4>
         <p>The GlocalBodh app from Renovate India is a ONE STOP SOLUTION to your NGO / Social Sector / Development sector needs. We have all the things that you require at one place.</p>
@@ -1410,53 +1411,39 @@
         <h4 style="font-weight:600; margin-bottom:15px;">Contact Us</h4>
         
         <!-- Form with Google Sheets Integration -->
-        <form id="contactForm" style="display:flex; flex-direction:column; gap:12px;">
-          <input type="text" id="name" name="name" placeholder="Your Name *" required 
-                 style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
-          
-          <input type="email" id="email" name="email" placeholder="Your Email *" required 
-                 style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
-          
-          <input type="tel" id="phone" name="phone" placeholder="Phone Number *" required
-                 style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
-          
-          <input type="text" id="organization" name="organization" placeholder="Organization Name" 
-                 style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
-          
-          <select id="topic" name="topic" 
-                  style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
-            <option value="" disabled selected>Select a topic</option>
-            <option value="General Inquiry">General Inquiry</option>
-            <option value="Training Programs">Training Programs</option>
-            <option value="Partnership Opportunities">Partnership Opportunities</option>
-            <option value="Technical Support">Technical Support</option>
-            <option value="Other">Other</option>
-          </select>
-          
-          <!-- Verification question to filter out non-serious inquiries -->
-          <select id="ngo_involvement" name="ngo_involvement" required
-                  style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
-            <option value="" disabled selected>What is your involvement with NGOs? *</option>
-            <option value="I work at an NGO">I work at an NGO</option>
-            <option value="I volunteer with NGOs">I volunteer with NGOs</option>
-            <option value="I'm starting an NGO">I'm starting an NGO</option>
-            <option value="I'm a donor/supporter">I'm a donor/supporter</option>
-            <option value="Other">Other</option>
-          </select>
-          
-          <textarea id="message" name="message" placeholder="Your Message *" rows="3" required 
-                    style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit; resize:vertical;"></textarea>
-          
-          <!-- Hidden honeypot field to prevent spam -->
-          <input type="text" id="honey" name="honey" style="display:none">
-          
-          <div id="formStatus" style="display:none; padding:10px; border-radius:4px; margin-top:10px; font-size:14px;"></div>
-          
-          <button type="submit" id="submitButton"
-                  style="padding:10px 15px; background-color:#3a4c97; color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:500; transition:background-color 0.3s;">
-            Send Message
-          </button>
-        </form>
+        <form action="https://formsubmit.co/connect@glocalbodh.co" method="POST" style="display:flex; flex-direction:column; gap:12px;">
+  
+  <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
+  
+  <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
+  
+  <input type="tel" name="phone" placeholder="Phone Number" style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
+  
+  <select name="topic" style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit;">
+    <option value="" disabled selected>Select a topic</option>
+    <option value="general">General Inquiry</option>
+    <option value="training">Training Programs</option>
+    <option value="partnership">Partnership Opportunities</option>
+    <option value="support">Technical Support</option>
+  </select>
+  
+  <textarea name="message" placeholder="Your Message" rows="3" required style="padding:10px; border-radius:4px; border:none; background-color:#1a2547; color:#fff; font-family:inherit; resize:vertical;"></textarea>
+  
+  <!-- Hidden honeypot field to prevent spam -->
+  <input type="text" name="_honey" style="display:none">
+  
+  <!-- Redirect after submission -->
+  <input type="hidden" name="_next" value="https://renovateindia.co/thank-you">
+  
+  <!-- Autoresponse (THANK YOU email to user) -->
+  <input type="hidden" name="_autoresponse" value="Thank you for contacting GlocalBodh Academy. We have received your message and will get back to you shortly.">
+
+  <button type="submit" style="padding:10px 15px; background-color:#3a4c97; color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:500; transition:background-color 0.3s;">
+    Send Message
+  </button>
+
+</form>
+
       </div>
     </div>
 
